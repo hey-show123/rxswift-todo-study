@@ -1,41 +1,93 @@
-# RxSwift ToDo App
+# RxStream サンプル — 動画配信サービス iOS アプリ
 
-RxSwift + MVVM パターンで実装したシンプルな ToDo アプリ。
+RxSwift × UIKit × Clean Architecture で構築した動画配信サービスのサンプル実装。
+**リードエンジニアとして設計方針・アーキテクチャ改善・テスト戦略**まで意識した構成にしています。
 
-## 構成
+## アーキテクチャ
 
 ```
-RxTodoApp/
-├── Package.swift
-└── RxTodoApp/
-    ├── AppDelegate.swift
-    ├── Model/
-    │   └── TodoItem.swift          # データモデル
-    ├── ViewModel/
-    │   └── TodoViewModel.swift     # ビジネスロジック (RxSwift)
-    └── View/
-        ├── TodoViewController.swift # メイン画面
-        └── TodoCell.swift           # カスタムセル
+Presentation ──▶ Domain ◀── Data
 ```
 
-## 使用している RxSwift の主要コンセプト
+| レイヤー | 役割 |
+|---------|------|
+| **Domain** | Entity・Repository Protocol・UseCase（ビジネスロジック） |
+| **Data** | Repository の具体実装（API・DB・キャッシュ） |
+| **Presentation** | ViewModel (I/O パターン)・ViewController・Coordinator |
 
-| 概念 | 使用箇所 |
-|------|---------|
-| `BehaviorRelay` | todos リスト・フィルターテキストの状態管理 |
-| `PublishRelay` | 追加・削除・トグルのイベント伝達 |
-| `Observable.combineLatest` | todos + filterText を合成してフィルタリング |
-| `withLatestFrom` | インデックスとデータを安全に組み合わせる |
-| `bind(to:)` | ViewModel → View への一方向データバインディング |
-| `rx.items` | TableView への自動バインディング |
-| `rx.text` / `rx.itemSelected` | UIKit イベントの Observable 化 |
-| `DisposeBag` | メモリリーク防止のためのサブスクリプション管理 |
+依存方向を一方向に保ち、`Data` と `Presentation` は `Domain` のプロトコルにのみ依存します。
+`VideoRepositoryImpl` をモックに差し替えるだけでテストが通る構造です。
 
-## 機能
+## 使用している RxSwift オペレータ
 
-- ToDo の一覧表示
-- ToDo の追加（ナビゲーションバー右の + ボタン）
-- 完了/未完了のトグル（セルタップ）
-- 削除（左スワイプ）
-- リアルタイム検索フィルター
-- 全件数・完了件数の統計表示
+| オペレータ | 目的 |
+|-----------|------|
+| `flatMapLatest` | カテゴリ変更時に前のAPIリクエストをキャンセル |
+| `scan` | お気に入りトグルをリスト全体の再取得なしで差分更新 |
+| `debounce` + `distinctUntilChanged` | 検索入力の300ms待機・重複排除 |
+| `share(replay: 1)` | `fetchedVideos` をマルチキャストして多重リクエスト防止 |
+| `withLatestFrom` | リフレッシュトリガーに最新カテゴリを組み合わせる |
+| `merge` | fetch trigger と refresh trigger を単一ストリームへ |
+| `catch` | エラーをUI側に伝えつつストリームを継続 |
+| `Driver` | メインスレッド保証・エラー終了なし（UIバインディング専用） |
+| `startWith` | 初期値の注入（カテゴリ・検索クエリ） |
+| `BehaviorRelay` / `PublishRelay` | 状態管理 / イベント発火 |
+
+## ViewModel: Input / Output パターン
+
+```swift
+let output = viewModel.transform(input: Input(
+    selectedCategory: segment.rx.selectedSegmentIndex.map { Category.allCases[$0] },
+    searchQuery:      searchBar.rx.text.orEmpty.asObservable(),
+    favoriteToggled:  favoriteToggleRelay.asObservable(),
+    refreshTrigger:   refreshControl.rx.controlEvent(.valueChanged).asObservable(),
+    selectedVideo:    tableView.rx.modelSelected(Video.self).asObservable()
+))
+```
+
+ViewController は I/O を渡すだけ。ViewModel 内に RxSwift ロジックを閉じ込め、
+テスト時は `MockVideoRepository` を注入するだけで全ロジックを検証できます。
+
+## Coordinator パターン
+
+画面遷移ロジックを ViewController から分離。
+`VideoCoordinator` が Repository を保持し、UseCase → ViewModel → ViewController へ DI します。
+
+```
+AppCoordinator
+  └── VideoCoordinator
+        ├── VideoListViewController
+        └── VideoDetailViewController
+```
+
+## テスト
+
+```bash
+xcodebuild test \
+  -project RxTodoApp.xcodeproj \
+  -scheme RxTodoApp \
+  -destination "platform=iOS Simulator,name=iPhone 16"
+```
+
+`MockVideoRepository` によるユニットテストを実装：
+
+- 初期ロードで全ビデオ取得
+- カテゴリ変更でフィルタリング
+- 検索クエリのフィルタリング
+- お気に入りトグルの差分更新
+- APIエラー時のエラーメッセージ伝播
+
+## CI/CD (GitHub Actions)
+
+`.github/workflows/ci.yml` にて `main` ブランチへの push / PR 時にビルド＋テストを自動実行。
+
+## セットアップ
+
+```bash
+# xcodegen でプロジェクト生成
+brew install xcodegen
+xcodegen generate
+
+# Xcode で開く
+open RxTodoApp.xcodeproj
+```

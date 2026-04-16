@@ -7,26 +7,76 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1777C058A60EDC2BB7BF8F47 /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C5D85A829BC37CD623DB0F0 /* TodoViewController.swift */; };
-		5E352C4E3AA48F134807AE88 /* TodoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5DB0D0E5F83B1D063C00AE /* TodoViewModel.swift */; };
+		020C64ACCBD5FFC9AA8CBA2C /* VideoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B5DC641CCEB3A9E91C446E /* VideoDetailViewController.swift */; };
+		0367B1ECB8B15392ADD49D8E /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48351273AA7C698E70C27007 /* Coordinator.swift */; };
+		1A2F046D9993823D7264F64B /* VideoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 347219EEEFFE8AECF7B6A3A9 /* VideoRepository.swift */; };
+		1D31D156A5E6E3EC4E969CCB /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C42427F415D725B9F461E0BD /* RxSwift */; };
+		1FE1FFF01943D5FB216B45D0 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AB984CBC5F4C5B7829DDEFF6 /* RxCocoa */; };
+		1FE9B1767D1D1A6F9C50621D /* MockVideoRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B271445D49D4FFB31545B51 /* MockVideoRepository.swift */; };
+		31536541DD12ED9E73E64BCB /* FetchVideosUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86B8CBA0185B5E6B5474E27B /* FetchVideosUseCase.swift */; };
+		4E4BC39688BC3334FB4735BD /* ToggleFavoriteUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33FB3BE0FDC73CE4F0D21C28 /* ToggleFavoriteUseCase.swift */; };
+		5C4FDD8B3A9593355A5E1363 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = CA918A4163CF4B5D46F9E80F /* RxBlocking */; };
 		5EABC88C03DB878985319757 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8B3FD4528D5427C9149119AB /* RxSwift */; };
+		7B35FBB6A58D9B02C4FB5BB8 /* VideoListViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2CCCA8EB158A78B50B626AA /* VideoListViewModelTests.swift */; };
+		7BCAA6F4297D9255CED7A675 /* VideoRepositoryImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 817C683C0C9523B6B698F316 /* VideoRepositoryImpl.swift */; };
+		7E0F3562749F4E5326390317 /* RxTest in Frameworks */ = {isa = PBXBuildFile; productRef = 78D9728236EF56914454CCFB /* RxTest */; };
 		96BDD607CE35BF1B5AD3522B /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = C54F012701CA38784281F676 /* RxCocoa */; };
-		9A8368A5FD99F9DE9CD477C3 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED55B75EA659572F6243A24 /* TodoCell.swift */; };
-		AB8155B270FA1BB7FDDF7748 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0B62B22182F15079CFB5F82 /* AppDelegate.swift */; };
-		AFDAEDE333D62C82192FA9FE /* TodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0D1A82942BDC7B715F40A61 /* TodoItem.swift */; };
+		A2F3BBC1A4B38700413D0382 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6893503336A5481628EFD15 /* AppCoordinator.swift */; };
+		AB92CECD1031FC35A536EA44 /* VideoListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AFF93186288B3B72509FD53 /* VideoListViewModel.swift */; };
+		AF6FB3BB1AC8BB8BFF70331F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A0CA5DEE4A603E962209232 /* AppDelegate.swift */; };
+		B78152E15F9DE26ECD8E5E5F /* VideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9850D84097F90B0279FAEDA0 /* VideoCell.swift */; };
+		BBC9426198938DEBCB31BF2B /* SearchVideosUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714DC64EB49B98AE7DDD04D0 /* SearchVideosUseCase.swift */; };
+		C887BA5754BB5EF38C5A76F0 /* VideoCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2BB2B50D1D02CC00C547049 /* VideoCoordinator.swift */; };
+		E73F9ABEB5543CF500A21AE7 /* VideoDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1912D007B7A0B5C8C3A9A741 /* VideoDetailViewModel.swift */; };
+		F14E2E9768C48B47D2C94CB4 /* VideoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E4F23FDF6BE4B028A136A0 /* VideoListViewController.swift */; };
+		FA2E8A13BE946DFC3E0E8B3D /* Video.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084618DB8005F94DA74032D /* Video.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CE55290D116A9BA280EB1535 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 845DB065937596300F92C2DD /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5526A3BE488EC7A2D13A4234;
+			remoteInfo = RxTodoApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		076C230082AD49FADC288347 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		5C5D85A829BC37CD623DB0F0 /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
+		0B271445D49D4FFB31545B51 /* MockVideoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockVideoRepository.swift; sourceTree = "<group>"; };
+		1912D007B7A0B5C8C3A9A741 /* VideoDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewModel.swift; sourceTree = "<group>"; };
+		33FB3BE0FDC73CE4F0D21C28 /* ToggleFavoriteUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleFavoriteUseCase.swift; sourceTree = "<group>"; };
+		347219EEEFFE8AECF7B6A3A9 /* VideoRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRepository.swift; sourceTree = "<group>"; };
+		48351273AA7C698E70C27007 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		61B5DC641CCEB3A9E91C446E /* VideoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoDetailViewController.swift; sourceTree = "<group>"; };
+		6AFF93186288B3B72509FD53 /* VideoListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModel.swift; sourceTree = "<group>"; };
 		704A03C1AD5C349CFE1A85FC /* RxTodoApp.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = RxTodoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7ED55B75EA659572F6243A24 /* TodoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
-		7F5DB0D0E5F83B1D063C00AE /* TodoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewModel.swift; sourceTree = "<group>"; };
-		C0D1A82942BDC7B715F40A61 /* TodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoItem.swift; sourceTree = "<group>"; };
-		F0B62B22182F15079CFB5F82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		70E4F23FDF6BE4B028A136A0 /* VideoListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewController.swift; sourceTree = "<group>"; };
+		714DC64EB49B98AE7DDD04D0 /* SearchVideosUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVideosUseCase.swift; sourceTree = "<group>"; };
+		817C683C0C9523B6B698F316 /* VideoRepositoryImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoRepositoryImpl.swift; sourceTree = "<group>"; };
+		86B8CBA0185B5E6B5474E27B /* FetchVideosUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchVideosUseCase.swift; sourceTree = "<group>"; };
+		8A0CA5DEE4A603E962209232 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9850D84097F90B0279FAEDA0 /* VideoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCell.swift; sourceTree = "<group>"; };
+		A084618DB8005F94DA74032D /* Video.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Video.swift; sourceTree = "<group>"; };
+		A2CCCA8EB158A78B50B626AA /* VideoListViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoListViewModelTests.swift; sourceTree = "<group>"; };
+		C2BB2B50D1D02CC00C547049 /* VideoCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCoordinator.swift; sourceTree = "<group>"; };
+		D45C4E00D7CFADB604B7E705 /* RxTodoAppTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = RxTodoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6893503336A5481628EFD15 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0602B74619EA1986BCDB43FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D31D156A5E6E3EC4E969CCB /* RxSwift in Frameworks */,
+				1FE1FFF01943D5FB216B45D0 /* RxCocoa in Frameworks */,
+				7E0F3562749F4E5326390317 /* RxTest in Frameworks */,
+				5C4FDD8B3A9593355A5E1363 /* RxBlocking in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0D93361F81F6F5C0E48D588D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,11 +92,11 @@
 		0BBD38E5FA40364EF9A878F9 /* RxTodoApp */ = {
 			isa = PBXGroup;
 			children = (
-				F0B62B22182F15079CFB5F82 /* AppDelegate.swift */,
 				076C230082AD49FADC288347 /* Info.plist */,
-				2418D81DE22B8B8B53197766 /* Model */,
-				5A36FA52E2B82610AFA6B8C0 /* View */,
-				205C6CCC9CFDFCA9539FA2D1 /* ViewModel */,
+				DC0BDC3286D602F28133A9DA /* Application */,
+				35D9822409F9FB23C9FA4D3D /* Data */,
+				C10AB1E8B4318A0EA900AF31 /* Domain */,
+				68F4C18CF6BD707DA89C698D /* Presentation */,
 			);
 			path = RxTodoApp;
 			sourceTree = "<group>";
@@ -55,41 +105,141 @@
 			isa = PBXGroup;
 			children = (
 				704A03C1AD5C349CFE1A85FC /* RxTodoApp.app */,
+				D45C4E00D7CFADB604B7E705 /* RxTodoAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		205C6CCC9CFDFCA9539FA2D1 /* ViewModel */ = {
+		35D9822409F9FB23C9FA4D3D /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7F5DB0D0E5F83B1D063C00AE /* TodoViewModel.swift */,
+				D8AD3A9332E3AC7EC275A025 /* Repository */,
 			);
-			path = ViewModel;
+			path = Data;
 			sourceTree = "<group>";
 		};
-		2418D81DE22B8B8B53197766 /* Model */ = {
+		3774EE0DEBF23F5B6D80EB8D /* VideoDetail */ = {
 			isa = PBXGroup;
 			children = (
-				C0D1A82942BDC7B715F40A61 /* TodoItem.swift */,
+				61B5DC641CCEB3A9E91C446E /* VideoDetailViewController.swift */,
+				1912D007B7A0B5C8C3A9A741 /* VideoDetailViewModel.swift */,
 			);
-			path = Model;
+			path = VideoDetail;
 			sourceTree = "<group>";
 		};
-		5A36FA52E2B82610AFA6B8C0 /* View */ = {
+		3AB02719678EB697AFB5A636 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				7ED55B75EA659572F6243A24 /* TodoCell.swift */,
-				5C5D85A829BC37CD623DB0F0 /* TodoViewController.swift */,
+				A084618DB8005F94DA74032D /* Video.swift */,
 			);
-			path = View;
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		3E894F01306F8124F8F8D916 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				86B8CBA0185B5E6B5474E27B /* FetchVideosUseCase.swift */,
+				714DC64EB49B98AE7DDD04D0 /* SearchVideosUseCase.swift */,
+				33FB3BE0FDC73CE4F0D21C28 /* ToggleFavoriteUseCase.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		68F4C18CF6BD707DA89C698D /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				7342436F5487B60B7505FCDC /* Coordinator */,
+				3774EE0DEBF23F5B6D80EB8D /* VideoDetail */,
+				AF2AC5355F2FEFAD69B7B7B3 /* VideoList */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		7342436F5487B60B7505FCDC /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				D6893503336A5481628EFD15 /* AppCoordinator.swift */,
+				48351273AA7C698E70C27007 /* Coordinator.swift */,
+				C2BB2B50D1D02CC00C547049 /* VideoCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		829FE51899D07C6902463581 = {
 			isa = PBXGroup;
 			children = (
 				0BBD38E5FA40364EF9A878F9 /* RxTodoApp */,
+				86859100B75224A5C256CEF3 /* Tests */,
 				1112223F50AE4C7309AE1512 /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		86859100B75224A5C256CEF3 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				A2CCCA8EB158A78B50B626AA /* VideoListViewModelTests.swift */,
+				B59EDE57138B2E8E8E769856 /* Mock */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		AF2AC5355F2FEFAD69B7B7B3 /* VideoList */ = {
+			isa = PBXGroup;
+			children = (
+				9850D84097F90B0279FAEDA0 /* VideoCell.swift */,
+				70E4F23FDF6BE4B028A136A0 /* VideoListViewController.swift */,
+				6AFF93186288B3B72509FD53 /* VideoListViewModel.swift */,
+			);
+			path = VideoList;
+			sourceTree = "<group>";
+		};
+		B59EDE57138B2E8E8E769856 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				0B271445D49D4FFB31545B51 /* MockVideoRepository.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		C10AB1E8B4318A0EA900AF31 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				3AB02719678EB697AFB5A636 /* Entity */,
+				EF5F30D450CCE474B23A6658 /* Repository */,
+				3E894F01306F8124F8F8D916 /* UseCase */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		D8AD3A9332E3AC7EC275A025 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				817C683C0C9523B6B698F316 /* VideoRepositoryImpl.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		DC0BDC3286D602F28133A9DA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				8A0CA5DEE4A603E962209232 /* AppDelegate.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		EF5F30D450CCE474B23A6658 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				347219EEEFFE8AECF7B6A3A9 /* VideoRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		"TEMP_3D908F44-D2A0-4F9F-B52C-032962A39828" /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,6 +264,29 @@
 			productName = RxTodoApp;
 			productReference = 704A03C1AD5C349CFE1A85FC /* RxTodoApp.app */;
 			productType = "com.apple.product-type.application";
+		};
+		CFF20080052D88345CB27B13 /* RxTodoAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4E26D00D2853003B888C44E /* Build configuration list for PBXNativeTarget "RxTodoAppTests" */;
+			buildPhases = (
+				5BE4FBAF1C30375556FCBAB5 /* Sources */,
+				0602B74619EA1986BCDB43FF /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				965DA4F0D4B793A4450E5416 /* PBXTargetDependency */,
+			);
+			name = RxTodoAppTests;
+			packageProductDependencies = (
+				C42427F415D725B9F461E0BD /* RxSwift */,
+				AB984CBC5F4C5B7829DDEFF6 /* RxCocoa */,
+				78D9728236EF56914454CCFB /* RxTest */,
+				CA918A4163CF4B5D46F9E80F /* RxBlocking */,
+			);
+			productName = RxTodoAppTests;
+			productReference = D45C4E00D7CFADB604B7E705 /* RxTodoAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -144,24 +317,52 @@
 			projectRoot = "";
 			targets = (
 				5526A3BE488EC7A2D13A4234 /* RxTodoApp */,
+				CFF20080052D88345CB27B13 /* RxTodoAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
+		5BE4FBAF1C30375556FCBAB5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1FE9B1767D1D1A6F9C50621D /* MockVideoRepository.swift in Sources */,
+				7B35FBB6A58D9B02C4FB5BB8 /* VideoListViewModelTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		DE0738A45186133F58A78F2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB8155B270FA1BB7FDDF7748 /* AppDelegate.swift in Sources */,
-				9A8368A5FD99F9DE9CD477C3 /* TodoCell.swift in Sources */,
-				AFDAEDE333D62C82192FA9FE /* TodoItem.swift in Sources */,
-				1777C058A60EDC2BB7BF8F47 /* TodoViewController.swift in Sources */,
-				5E352C4E3AA48F134807AE88 /* TodoViewModel.swift in Sources */,
+				A2F3BBC1A4B38700413D0382 /* AppCoordinator.swift in Sources */,
+				AF6FB3BB1AC8BB8BFF70331F /* AppDelegate.swift in Sources */,
+				0367B1ECB8B15392ADD49D8E /* Coordinator.swift in Sources */,
+				31536541DD12ED9E73E64BCB /* FetchVideosUseCase.swift in Sources */,
+				BBC9426198938DEBCB31BF2B /* SearchVideosUseCase.swift in Sources */,
+				4E4BC39688BC3334FB4735BD /* ToggleFavoriteUseCase.swift in Sources */,
+				FA2E8A13BE946DFC3E0E8B3D /* Video.swift in Sources */,
+				B78152E15F9DE26ECD8E5E5F /* VideoCell.swift in Sources */,
+				C887BA5754BB5EF38C5A76F0 /* VideoCoordinator.swift in Sources */,
+				020C64ACCBD5FFC9AA8CBA2C /* VideoDetailViewController.swift in Sources */,
+				E73F9ABEB5543CF500A21AE7 /* VideoDetailViewModel.swift in Sources */,
+				F14E2E9768C48B47D2C94CB4 /* VideoListViewController.swift in Sources */,
+				AB92CECD1031FC35A536EA44 /* VideoListViewModel.swift in Sources */,
+				1A2F046D9993823D7264F64B /* VideoRepository.swift in Sources */,
+				7BCAA6F4297D9255CED7A675 /* VideoRepositoryImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		965DA4F0D4B793A4450E5416 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5526A3BE488EC7A2D13A4234 /* RxTodoApp */;
+			targetProxy = CE55290D116A9BA280EB1535 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0661ABB32A57F783C9F1F8B7 /* Debug */ = {
@@ -243,6 +444,22 @@
 			};
 			name = Debug;
 		};
+		0FE71914FD669D7BF15374E4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.RxTodoAppTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxTodoApp.app/RxTodoApp";
+			};
+			name = Release;
+		};
 		5C7EC37CC9AB9BF8B5B01A3D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -315,6 +532,22 @@
 			};
 			name = Release;
 		};
+		F1C165B87C26DFD873354E78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.example.RxTodoAppTests;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RxTodoApp.app/RxTodoApp";
+			};
+			name = Debug;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -336,6 +569,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
+		E4E26D00D2853003B888C44E /* Build configuration list for PBXNativeTarget "RxTodoAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1C165B87C26DFD873354E78 /* Debug */,
+				0FE71914FD669D7BF15374E4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -350,7 +592,22 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		78D9728236EF56914454CCFB /* RxTest */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E64195E5C9B8957769DAF2C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxTest;
+		};
 		8B3FD4528D5427C9149119AB /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E64195E5C9B8957769DAF2C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		AB984CBC5F4C5B7829DDEFF6 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E64195E5C9B8957769DAF2C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		C42427F415D725B9F461E0BD /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 5E64195E5C9B8957769DAF2C /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
@@ -359,6 +616,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 5E64195E5C9B8957769DAF2C /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
+		};
+		CA918A4163CF4B5D46F9E80F /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5E64195E5C9B8957769DAF2C /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
