@@ -1,0 +1,28 @@
+name: RxTodoApp
+options:
+  bundleIdPrefix: com.example
+  deploymentTarget:
+    iOS: "15.0"
+
+packages:
+  RxSwift:
+    url: https://github.com/ReactiveX/RxSwift.git
+    from: "6.7.0"
+
+targets:
+  RxTodoApp:
+    type: application
+    platform: iOS
+    sources:
+      - RxTodoApp
+    dependencies:
+      - package: RxSwift
+        product: RxSwift
+      - package: RxSwift
+        product: RxCocoa
+    info:
+      path: RxTodoApp/Info.plist
+      properties:
+        UILaunchScreen: {}
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
